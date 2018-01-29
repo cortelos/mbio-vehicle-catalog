@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>io.mercedesbenz.catalogworkshop</groupId>
+	<artifactId>e2e-tests</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>Mercedes-Benz.IO :: Catalog Workshop :: E2E Tests</name>
+	<description>E2E Testing with Cucumber and Selenium for Mercedes-Benz.io Catalog Workshop.</description>
+
+	<properties>
+		<!-- encoding -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<!-- Java version -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<!-- dependency versions -->
+		<lombok.version>1.16.18</lombok.version>
+		<!-- catalog-client -->
+		<catalog-client.version>0.0.1-SNAPSHOT</catalog-client.version>
+		<!-- spring -->
+		<spring.boot.version>1.5.9.RELEASE</spring.boot.version>
+		<!-- tests -->
+		<cucumber.version>1.2.5</cucumber.version>
+		<junit.version>4.11</junit.version>
+		<selenium-java.version>3.8.1</selenium-java.version>
+		<!-- logging -->
+		<slf4j-api.version>1.7.25</slf4j-api.version>
+		<logback-classic.version>1.1.11</logback-classic.version>
+
+		<!-- plug-in versions -->
+		<maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.mbio.workshops</groupId>
+			<artifactId>catalog-client</artifactId>
+			<version>${catalog-client.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback-classic.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${selenium-java.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<scm>
+		<url>https://gitlab.com/lisbon-hub/catalog-workshop.git</url>
+	</scm>
+
+	<contributors>
+		<contributor>
+			<name>Andre Macedo</name>
+			<email>andre.macedo@mercedes-benz.io</email>
+			<organization>Mercedes-Benz.IO</organization>
+			<organizationUrl>https://mercedes-benz.io</organizationUrl>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</contributor>
+		<contributor>
+			<name>Antonio Ribeiro</name>
+			<email>antonio.ribeiro@mercedes-benz.io</email>
+			<organization>Mercedes-Benz.IO</organization>
+			<organizationUrl>https://mercedes-benz.io</organizationUrl>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</contributor>
+	</contributors>
+</project>

@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  catalog-frontend-prod:
+    container_name: catalog-frontend-prod
+    image: webratio/nodejs-http-server
+    ports:
+      - "9002:8080"
+    networks:
+      - mbio-prod-net
+    volumes:
+      - "$PWD/catalog-frontend/:/opt/www"
+
+  catalog-backend-prod:
+    container_name: catalog-backend-prod
+    image: mbio/catalog:latest
+    ports:
+      - "9001:8080"
+    networks:
+      - mbio-prod-net
+
+networks:
+  mbio-prod-net:
+    driver: bridge

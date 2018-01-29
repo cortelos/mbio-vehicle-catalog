@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  catalog-frontend-test:
+    container_name: catalog-frontend-test
+    image: webratio/nodejs-http-server
+    ports:
+      - "8002:8080"
+    networks:
+      - mbio-test-net
+    volumes:
+      - "$PWD/catalog-frontend/:/opt/www"
+
+  catalog-backend-test:
+    container_name: catalog-backend-test
+    image: mbio/catalog:latest
+    ports:
+      - "8001:8080"
+    networks:
+      - mbio-test-net
+
+networks:
+  mbio-test-net:
+    driver: bridge

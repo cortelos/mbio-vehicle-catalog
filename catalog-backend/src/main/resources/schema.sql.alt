@@ -1,0 +1,8 @@
+drop table if exists vehicle;
+create table if not exists vehicle (
+ 	id			tinyint identity(1,1) primary key,
+ 	brand		varchar(50) not null,
+ 	model		varchar(50) not null,
+ 	fuel_type	varchar(50) not null,
+	hybrid		boolean not null
+);

@@ -1,0 +1,95 @@
+pipeline {
+
+     agent any
+
+     tools {
+         jdk 'jdk8'
+         maven 'maven3'
+         nodejs 'nodejs9'
+     }
+
+     environment {
+         npm_config_cache = 'npm-cache'
+
+         endpoint_frontend_url = 'http://localhost:8002'
+         endpoint_backend_url = 'http://localhost:8001'
+     }
+
+     triggers {
+         pollSCM('H/5 * * * *')
+     }
+
+     stages {
+         stage('BE - Build') {
+             steps {
+                 sh 'mvn clean install -f catalog-backend/pom.xml'
+                 junit 'catalog-backend/target/surefire-reports/*.xml'
+             }
+         }
+
+         stage('BE Client - Build') {
+              steps {
+                  sh 'mvn clean install -f catalog-client/pom.xml'
+              }
+          }
+
+         stage('FE - Build for Test') {
+             steps {
+                 sh 'cd catalog-frontend && npm install'
+                 sh 'cd catalog-frontend && npm run test'
+             }
+         }
+
+         stage('BE - Build Docker Image') {
+            steps {
+                 sh 'mvn package docker:build -DskipTests -f catalog-backend/pom.xml'
+            }
+         }
+
+         stage('Deploy & Start TST') {
+            steps {
+                sh '/usr/local/bin/docker-compose -f infrastructure/docker-compose-test.yml up -d'
+                echo 'Waiting 30s for test machine startup...'
+                sh 'sleep 30'
+            }
+         }
+
+         stage('E2E Test in TST') {
+             steps {
+
+                 script {
+                    wrap([$class: 'Xvfb', additionalOptions: '', assignedLabels: '', displayName: 99, displayNameOffset: 0, installationName: 'xvfb', screen: '', timeout: 10]) {
+                        sh 'mvn clean install -f e2e-tests/pom.xml'
+                     }
+                 }
+             }
+         }
+
+         stage('Destroy TST') {
+             steps {
+                 sh '/usr/local/bin/docker-compose -f infrastructure/docker-compose-test.yml down'
+                 echo 'Waiting 30s for test machine shutdown...'
+                 sh 'sleep 30'
+             }
+         }
+
+         stage('FE - Build for PROD') {
+              steps {
+                  sh 'cd catalog-frontend && npm install'
+                  sh 'cd catalog-frontend && npm run build'
+              }
+         }
+
+         stage('Release') {
+              steps {
+                   echo 'Releasing...'
+               }
+         }
+
+         stage('Deploy to PROD') {
+             steps {
+                 sh '/usr/local/bin/docker-compose -f infrastructure/docker-compose-prod.yml up -d'
+             }
+         }
+     }
+}
