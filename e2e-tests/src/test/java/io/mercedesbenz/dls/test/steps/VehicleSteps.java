@@ -1,19 +1,8 @@
 package io.mercedesbenz.dls.test.steps;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.mbio.workshops.catalog.api.CatalogApi;
 import com.mbio.workshops.catalog.client.ApiClient;
@@ -22,12 +11,20 @@ import com.mbio.workshops.catalog.model.Vehicle;
 import com.mbio.workshops.catalog.model.Vehicle.FuelTypeEnum;
 import com.mbio.workshops.catalog.model.Vehicle.VehicleBrandEnum;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import io.mercedesbenz.dls.test.dto.VehicleDto;
 import lombok.extern.slf4j.Slf4j;
+
+import static org.hamcrest.CoreMatchers.instanceOf;
+import static org.junit.Assert.*;
 
 /**
  * Defines the steps required to execute the end-to-end (e2e) test suite
@@ -157,7 +154,7 @@ public class VehicleSteps {
 			driver.quit();
 		}
 
-		driver = new ChromeDriver();
+		driver = new FirefoxDriver();
 
 		driver.get(getFrontendUrl());
 	}
