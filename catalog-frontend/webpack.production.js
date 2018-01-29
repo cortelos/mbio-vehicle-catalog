@@ -2,7 +2,7 @@ var webpack = require('webpack')
 
 module.exports = [
   new webpack.DefinePlugin({
-    "WEBPACK_BACKEND_URL": JSON.stringify("http://localhost:9001/catalog/v1/")
+    "WEBPACK_BACKEND_URL": JSON.stringify("http://jenkins.aws.local:9001/catalog/v1/")
   }),
   new webpack.DefinePlugin({
   'process.env': {
