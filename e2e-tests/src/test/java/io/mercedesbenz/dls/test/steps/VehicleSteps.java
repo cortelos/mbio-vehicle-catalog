@@ -14,7 +14,7 @@ import com.mbio.workshops.catalog.model.Vehicle.VehicleBrandEnum;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
@@ -154,7 +154,7 @@ public class VehicleSteps {
 			driver.quit();
 		}
 
-		driver = new FirefoxDriver();
+		driver = new ChromeDriver();
 
 		driver.get(getFrontendUrl());
 	}
