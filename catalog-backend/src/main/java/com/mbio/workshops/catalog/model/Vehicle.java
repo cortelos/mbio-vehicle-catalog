@@ -66,4 +66,9 @@ public class Vehicle implements Serializable {
      */
     @NotNull
     private Boolean hybrid;
+
+    /**
+     * The color of the card.
+     */
+    private String color;
 }

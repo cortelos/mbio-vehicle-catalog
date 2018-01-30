@@ -25,7 +25,7 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mbio.workshops.catalog.CatalogMockApp;
+import com.mbio.workshops.catalog.VehicleBackendApp;
 import com.mbio.workshops.catalog.model.FuelType;
 import com.mbio.workshops.catalog.model.Vehicle;
 import com.mbio.workshops.catalog.model.VehicleBrand;
@@ -35,7 +35,7 @@ import com.mbio.workshops.catalog.model.VehicleBrand;
  * integration tests.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, classes = CatalogMockApp.class)
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, classes = VehicleBackendApp.class)
 @AutoConfigureMockMvc
 public class CatalogControllerV1IT {
 

@@ -8,9 +8,9 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  * Catalog application.
  */
 @SpringBootApplication
-public class CatalogMockApp {
+public class VehicleBackendApp {
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder(CatalogMockApp.class).run(args);
+        new SpringApplicationBuilder(VehicleBackendApp.class).run(args);
     }
 }
