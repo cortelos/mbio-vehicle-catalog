@@ -17,6 +17,9 @@
 	<name>Catalog Workshop Backend</name>
 
 	<properties>
+		<!-- docker image name -->
+		<docker-image-name>mbio/catalog</docker-image-name>
+
 		<!-- encoding -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -93,7 +96,7 @@
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>${docker-maven-plugin.version}</version>
 				<configuration>
-					<imageName>mbio/${project.artifactId}</imageName>
+					<imageName>${docker-image-name}</imageName>
 					<imageTags>
 						<imageTag>${project.version}</imageTag>
 						<imageTag>latest</imageTag>
