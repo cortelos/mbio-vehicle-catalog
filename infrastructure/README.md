@@ -28,6 +28,16 @@ Optinally you can use vagrant file `Vagrantfile` in this directory in order to s
 * `vagrant down` to stop the CI/CD machine
 * `vagrant ssh` if you want to connect over SSH do CI/CD machine
 
+In jenkins you have to install plugins bellow:
+* NodeJS
+* Xvfb
+
+Finally, you have to create an installation for:
+* JDK version 8 with name `jdk8`
+* Nodejs version 9 with name `nodejs9`
+* Maven version 3 with name `maven3`
+* Xvfb with name `xvfb`
+
 ## Jenkins
 
 After running CI/CD machine you can access jenkins in url: http://localhost:8080
@@ -43,3 +53,10 @@ We provide two different environments: one to run automated testing (test enviro
 You can access prod environment at: [http://localhost:9002](http://localhost:9002) (frontend) and [http://localhost:9001](http://localhost:9001) (backend).
 
 Test environment uses ports 8002 and 8001 for frontend and backend. This environment is only available during testing phase. Please check documentation in `docs/presentation.pptx`.
+
+## Files description
+
+* docker-compose-prod.yml: runs two docker images (backend + frontend) for 'PROD'
+* docker-compose-test.tml: runs two docker images (backend + frontend) for 'TEST'
+* Jenkinsfile: jenkins pipeline definition
+* Vagrantfile: script to build a CentOS machine with jenkins installed.
