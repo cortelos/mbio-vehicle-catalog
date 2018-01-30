@@ -57,3 +57,15 @@ Module where the end-to-end tests are depicted.
 ### `infrastructure`
 
 Module that contains all files required to set up the CI/CD infrastructure.
+
+
+## Authors
+
+* **André Macedo** - *Software Engineer* - [Andre Macedo @ LinkedIn](https://www.linkedin.com/in/andrecostamacedo)
+* **António Ribeiro** - *Software Engineer* - [António Ribeiro @ LinkedIn](https://www.linkedin.com/in/antónio-ribeiro-32103829/)
+
+
+## Acknowledgments
+
+* Mercedes-Benz.io
+* FCT
