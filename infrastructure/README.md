@@ -21,6 +21,9 @@ You have to install in your machine:
 * [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 * [Jenkins](https://jenkins.io)
 * [Xvfb](https://www.x.org/releases/X11R7.7/doc/man/man1/Xvfb.1.xhtml)
+* Jenkins plugins:
+  - NodeJS
+  - Xvfb
 
 Optinally you can use vagrant file `Vagrantfile` in this directory in order to setup a virtual machine with all dependencies. In order to do it please install [Vagrant](https://www.vagrantup.com) and run commands:
 

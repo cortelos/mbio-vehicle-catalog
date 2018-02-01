@@ -19,7 +19,7 @@ In order for being able to properly develop and run the project, the following c
 
 In order to checkout the Vehicle Catalog Workshop project, the following command should be issued:
 
-`git clone https://gitlab.com/lisbon-hub/catalog-workshop.git`
+`git clone https://github.com/cortelos/mbio-vehicle-catalog.git`
 
 ## Modules
 
@@ -28,7 +28,6 @@ The project workshop is divided into the following modules:
 - `catalog-backend`
 - `catalog-client`
 - `catalog-frontend`
-- `docs`
 - `e2e-tests`
 - `infrastructure`
 
@@ -45,10 +44,6 @@ Module containing the Vehicle Catalog REST API client used by the end-to-end (e2
 ### `catalog-frontend`
 
 Module that contains the code for the frontend: a VueJS application that communicates with the backend module.
-
-### `docs`
-
-Module containing the Vehicle Catalog workshop documentation.
 
 ### `e2e-tests`
 
