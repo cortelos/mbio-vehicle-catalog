@@ -15,10 +15,6 @@ pipeline {
          endpoint_backend_url = 'http://localhost:8001'
      }
 
-     triggers {
-         pollSCM('H/2 * * * *')
-     }
-
      stages {
          stage('BE - Build') {
              steps {
