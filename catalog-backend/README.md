@@ -44,3 +44,11 @@ The H2 console is available on the following url: http://localhost:8080/h2-conso
 The credentials for accessing the database console are available on `application.yml` under `src/main/resources`.
 
 The `VEHICLE` table, maps the `Vehicle` entity and will be used to persist all the vehicles.
+
+
+### Docker
+
+In `pom.xml` docker-maven-plugin was configured to build a docker image (with goal docker:build) and copy the spring boot
+for docker machine.
+
+If you want to build a docker image with backend inside please run `mvn package docker:build -DskipTests`

@@ -25,25 +25,13 @@ You have to install in your machine:
   - NodeJS
   - Xvfb
 
-Optinally you can use vagrant file `Vagrantfile` in this directory in order to setup a virtual machine with all dependencies. In order to do it please install [Vagrant](https://www.vagrantup.com) and run commands:
 
-* `vagrant up` to start the CI/CD machine
-* `vagrant down` to stop the CI/CD machine
-* `vagrant ssh` if you want to connect over SSH do CI/CD machine
-
-In jenkins you have to install plugins bellow:
-* NodeJS
-* Xvfb
-
-Finally, you have to create an installation for:
+Finally, you have to create in Jenkins an installation for:
 * JDK version 8 with name `jdk8`
 * Nodejs version 9 with name `nodejs9`
 * Maven version 3 with name `maven3`
 * Xvfb with name `xvfb`
 
-## Jenkins
-
-After running CI/CD machine you can access jenkins in url: http://localhost:8080
 
 ## Setup Jenkins Job
 
@@ -62,4 +50,3 @@ Test environment uses ports 8002 and 8001 for frontend and backend. This environ
 * docker-compose-prod.yml: runs two docker images (backend + frontend) for 'PROD'
 * docker-compose-test.tml: runs two docker images (backend + frontend) for 'TEST'
 * Jenkinsfile: jenkins pipeline definition
-* Vagrantfile: script to build a CentOS machine with jenkins installed.

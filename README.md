@@ -6,6 +6,8 @@ The purpose of this project is to demonstrate how to properly automate most of a
 
 In order to get a copy of this project up and running on your local machine, for development and testing purposes, please follow the instructions present on the `README.md` files of each one of the project modules.
 
+If you want to run in a real CI/CD environment, please check for requirements in infrastructure/README.md`````
+
 ### Prerequisites
 
 In order for being able to properly develop and run the project, the following components should be installed:
@@ -14,6 +16,8 @@ In order for being able to properly develop and run the project, the following c
 - [NodeJS & npm](https://www.npmjs.com/get-npm)
 - [JDK 8](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html)
 - [Maven 3.5.x](https://maven.apache.org/download.cgi)
+- [Google Chrome](https://www.google.com/chrome/browser/desktop/index.html)
+- [Chrome Driver](https://sites.google.com/a/chromium.org/chromedriver/)
 
 ### Checkout
 

@@ -1,6 +1,6 @@
 # `catalog-client`
 
-> MB.io Vehicle Catalog Backend Client
+> MB.io Vehicle Catalog Backend Client (API)
 
 ## Getting Started
 

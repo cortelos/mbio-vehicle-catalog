@@ -10,9 +10,18 @@ This project implements E2E testing for Mb.io Vehicle Catalog E2E Tests using Cu
 
 In order to run tests locally you have to:
 
-* Run backend in port 8080
+* Run backend in port 8080:
+```
+cd catalog-backend 
+mvn clean install
+mvn spring-boot:run
+```
 * Run frontend in port 3000
-* Install [chrome](https://www.google.com/chrome/) and [chrome driver](https://sites.google.com/a/chromium.org/chromedriver/) in your machine.
+```
+cd catalog-frontend
+npm install
+npm run dev
+```
 
 ## Running Tests
 
