@@ -20,14 +20,9 @@ pipeline {
              steps {
                  sh 'mvn clean install -f catalog-backend/pom.xml'
                  junit 'catalog-backend/target/surefire-reports/*.xml'
+                 sh 'mvn clean install -f catalog-client/pom.xml'
              }
          }
-
-         stage('BE Client - Build') {
-              steps {
-                  sh 'mvn clean install -f catalog-client/pom.xml'
-              }
-          }
 
          stage('FE - Build for Test') {
              steps {
