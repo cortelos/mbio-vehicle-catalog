@@ -24,7 +24,7 @@
         <swagger-codegen-maven-plugin.version>2.2.3</swagger-codegen-maven-plugin.version>
 
         <!-- dependency versions -->
-        <jackson.version>2.9.0</jackson.version>
+        <jackson.version>2.12.7.1</jackson.version>
         <jersey.version>1.19.4</jersey.version>
         <swagger-annotations.version>1.5.16</swagger-annotations.version>
 
