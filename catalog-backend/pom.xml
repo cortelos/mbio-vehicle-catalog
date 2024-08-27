@@ -28,7 +28,7 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 
 		<!-- dependency versions -->
-		<springfox.version>2.7.0</springfox.version>
+		<springfox.version>2.10.0</springfox.version>
 		<commons-text.version>1.2</commons-text.version>
 
 		<!-- plug-in versions -->
